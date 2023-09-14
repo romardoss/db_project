@@ -1,0 +1,10 @@
+DeliverySystem.sln
+**/.vs
+**/.idea
+**/packages
+**/bin
+**/obj
+**/Properties
+**App.config
+**packages.config
+**DeliverySystem.csproj
