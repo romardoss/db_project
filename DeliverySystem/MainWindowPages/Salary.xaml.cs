@@ -1,5 +1,4 @@
-﻿using DeliverySystem.UIClasses;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,23 +16,13 @@ using System.Windows.Shapes;
 namespace DeliverySystem.MainWindowPages
 {
     /// <summary>
-    /// Interaction logic for Clients.xaml
+    /// Interaction logic for Salary.xaml
     /// </summary>
-    public partial class Clients : Page
+    public partial class Salary : Page
     {
-        public Clients()
+        public Salary()
         {
             InitializeComponent();
-        }
-
-        private void Border_MouseEnter(object sender, MouseEventArgs e)
-        {
-            BrushWithMouse.BrushYellow(true, (Border)sender);
-        }
-
-        private void Border_MouseLeave(object sender, MouseEventArgs e)
-        {
-            BrushWithMouse.BrushYellow(false, (Border)sender);
         }
     }
 }

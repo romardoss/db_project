@@ -1,0 +1,28 @@
+﻿<Window x:Class="DeliverySystem.LoginAndSignup.AccessingTheProgram"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeliverySystem.LoginAndSignup"
+        mc:Ignorable="d"
+        Title="AccessingTheProgram" Height="650" Width="1200">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="36"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#F78888">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" VerticalAlignment="Bottom" Margin="0,0,0,25">
+            <TextBlock HorizontalAlignment="Center" ><Italic>Вітаємо</Italic>!</TextBlock>
+            <TextBlock HorizontalAlignment="Center">Увійдіть або зареєструйтеся</TextBlock>
+        </StackPanel>
+        
+        <Frame x:Name="AccessingTheProgramFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

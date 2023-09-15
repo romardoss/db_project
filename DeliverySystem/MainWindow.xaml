@@ -5,24 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeliverySystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="1200">
+        Title="MainWindow" Height="650" Width="1200" >
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="{x:Null}"/>
-            <Setter Property="Height" Value="50"/>
+            <Setter Property="Height" Value="34"/>
             <Setter Property="MinWidth" Value="50"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Width" Value="250"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Width" Value="220"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Regular"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
             <Setter Property="Margin" Value="5,0,5,0"/>
         </Style>
         <Style TargetType="Image">
             <Setter Property="Margin" Value="10,0,0,0"/>
-            <Setter Property="Width" Value="30"/>
+            <Setter Property="Width" Value="22"/>
+
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Margin" Value="5,0,5,0"/>
+            <!--<Setter Property="Foreground" Value="#F8E9A1"/>-->
         </Style>
     </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition x:Name="LeftColumnGrid" Width="Auto" />
@@ -31,11 +38,11 @@
         <ScrollViewer VerticalScrollBarVisibility="Disabled">
             <StackPanel x:Name="LeftListTabs"  
                   VerticalAlignment="Top" HorizontalAlignment="Left"
-                  Background="#FFF3FF75" MinHeight="800">
-                <Button x:Name="HideMenuButton" Height="35" Click="HideMenuButton_Click">
+                  Background="#F78888" MinHeight="800">
+                <Button x:Name="HideMenuButton" Click="HideMenuButton_Click">
                     <DockPanel>
-                        <Image Width="20" Source="/Icons/arrow_left.png" />
-                        <TextBlock x:Name="HideTextBlock" FontSize="18">Приховати меню</TextBlock>
+                        <Image Source="/Icons/arrow_left.png" />
+                        <TextBlock x:Name="HideTextBlock">Приховати меню</TextBlock>
                     </DockPanel>
                 </Button>
                 <Button x:Name="OpenMenuButton" Height="35" Click="OpenMenuButton_Click" Visibility="Collapsed">
@@ -65,25 +72,25 @@
                         <TextBlock x:Name="PartnersTextBlock">Партнери</TextBlock>
                     </DockPanel>
                 </Button>
-                <Button x:Name="StatisticsButton">
+                <Button x:Name="StatisticsButton" Click="StatisticsButton_Click">
                     <DockPanel>
                         <Image Source="/Icons/monitoring.png" />
                         <TextBlock x:Name="StatisticTextBlock">Статистика</TextBlock>
                     </DockPanel>
                 </Button>
-                <Button x:Name="SalaryButton" >
+                <Button x:Name="SalaryButton" Click="SalaryButton_Click" >
                     <DockPanel>
                         <Image Source="/Icons/attach_money.png" />
                         <TextBlock x:Name="SalaryTextBlock">Зарплата</TextBlock>
                     </DockPanel>
                 </Button>
-                <Button x:Name="InfoButton" >
+                <Button x:Name="InfoButton" Click="InfoButton_Click" >
                     <DockPanel>
                         <Image Source="/Icons/info.png" />
                         <TextBlock x:Name="InfoTextBlock">Про програму</TextBlock>
                     </DockPanel>
                 </Button>
-                <Button x:Name="SettingsButton" >
+                <Button x:Name="SettingsButton" Click="SettingsButton_Click" >
                     <DockPanel>
                         <Image Source="/Icons/settings.png" />
                         <TextBlock x:Name="SettingsTextBlock">Налаштування</TextBlock>
@@ -91,6 +98,6 @@
                 </Button>
             </StackPanel>
         </ScrollViewer>
-        <Frame Grid.Column="1" x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        <Frame Grid.Column="1" x:Name="MainFrame"  Background="#90CCF4"/>
     </Grid>
 </Window>
