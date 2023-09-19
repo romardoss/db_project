@@ -36,14 +36,19 @@ namespace DeliverySystem.LoginAndSignup
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             Window window = Window.GetWindow(this);
-            window.Close();
             Window mainWindow = new MainWindow();
             mainWindow.Show();
+            window.Close();
         }
 
         private void RegistrationButton_Click(object sender, RoutedEventArgs e)
         {
-            _frame.Content = new RegistrationPage();
+            _frame.Content = new RegistrationPage(_frame);
+        }
+
+        private void ForgotPasswordButton_Click(object sender, RoutedEventArgs e)
+        {
+            _frame.Content = new ResetPasswordPage(_frame);
         }
     }
 }

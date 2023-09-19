@@ -29,7 +29,7 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Button x:Name="ForgotPasswordButton" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,25,0" Content="Забули пароль?"/>
+            <Button x:Name="ForgotPasswordButton" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,25,0" Content="Забули пароль?" Click="ForgotPasswordButton_Click"/>
             <Button x:Name="RegistrationButton" Grid.Column="1" HorizontalAlignment="Left" Margin="25,0,0,0" Content="Зареєструватися" Click="RegistrationButton_Click"/>
         </Grid>
     </Grid>

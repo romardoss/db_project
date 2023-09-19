@@ -20,9 +20,30 @@ namespace DeliverySystem.LoginAndSignup
     /// </summary>
     public partial class ResetPasswordPage : Page
     {
-        public ResetPasswordPage()
+        private Frame _frame;
+
+        private ResetPasswordPage()
         {
             InitializeComponent();
+        }
+
+        public ResetPasswordPage(Frame frame)
+        {
+            InitializeComponent();
+            _frame = frame;
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            _frame.Content = new LoginPage(_frame);
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = Window.GetWindow(this);
+            Window mainWindow = new MainWindow();
+            mainWindow.Show();
+            window.Close();
         }
     }
 }

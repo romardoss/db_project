@@ -21,9 +21,30 @@ namespace DeliverySystem.LoginAndSignup
     /// </summary>
     public partial class RegistrationPage : Page
     {
-        public RegistrationPage()
+        private Frame _frame;
+
+        private RegistrationPage()
         {
             InitializeComponent();
+        }
+
+        public RegistrationPage(Frame frame)
+        {
+            InitializeComponent();
+            _frame = frame;
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            _frame.Content = new LoginPage(_frame);
+        }
+
+        private void RegistrationButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = Window.GetWindow(this);
+            Window mainWindow = new MainWindow();
+            mainWindow.Show();
+            window.Close();
         }
     }
 }
