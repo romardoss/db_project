@@ -10,19 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace DeliverySystem.LoginAndSignup
 {
     /// <summary>
-    /// Interaction logic for AccessingTheProgram.xaml
+    /// Interaction logic for ResetPasswordPage.xaml
     /// </summary>
-    public partial class AccessingTheProgram : Window
+    public partial class ResetPasswordPage : Page
     {
-        public AccessingTheProgram()
+        public ResetPasswordPage()
         {
             InitializeComponent();
-            AccessingTheProgramFrame.Content = new LoginPage(AccessingTheProgramFrame);
         }
     }
 }

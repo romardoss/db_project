@@ -18,5 +18,13 @@
             <Setter Property="StrokeThickness" Value="1"/>
             <Setter Property="Stroke" Value="Black"/>
         </Style>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="35"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
     </Application.Resources>
 </Application>

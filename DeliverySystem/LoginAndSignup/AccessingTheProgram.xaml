@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeliverySystem.LoginAndSignup"
         mc:Ignorable="d"
-        Title="AccessingTheProgram" Height="650" Width="1200">
+        Title="AccessingTheProgram" Height="450" Width="800">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="Black"/>
@@ -13,16 +13,6 @@
         </Style>
     </Window.Resources>
     <Grid Background="#F78888">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        
-        <StackPanel Grid.Row="0" VerticalAlignment="Bottom" Margin="0,0,0,25">
-            <TextBlock HorizontalAlignment="Center" ><Italic>Вітаємо</Italic>!</TextBlock>
-            <TextBlock HorizontalAlignment="Center">Увійдіть або зареєструйтеся</TextBlock>
-        </StackPanel>
-        
         <Frame x:Name="AccessingTheProgramFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

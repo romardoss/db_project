@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DeliverySystem.LoginAndSignup;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -115,6 +116,14 @@ namespace DeliverySystem
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Content = new MainWindowPages.Settings();
+            this.Hide();
+            Window window = new AccessingTheProgram();
+            window.ShowDialog();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

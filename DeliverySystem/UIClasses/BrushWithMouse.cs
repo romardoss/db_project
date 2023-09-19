@@ -13,6 +13,10 @@ namespace DeliverySystem.UIClasses
     {
         private static readonly SolidColorBrush YellowWhenMouseLeave = new SolidColorBrush(Color.FromRgb(243, 210, 80));
         private static readonly SolidColorBrush YellowWhenMouseEnter = new SolidColorBrush(Color.FromRgb(243, 240, 100));
+        private static readonly SolidColorBrush BlueWhenMouseEnter = new SolidColorBrush(Color.FromRgb(93, 162, 213));
+        private static readonly SolidColorBrush BlueWhenMouseLeave = new SolidColorBrush(Color.FromRgb(144, 204, 244));
+
+
 
         public static void Brush<T>(Color color, T control) where T : Border
         {
@@ -24,16 +28,26 @@ namespace DeliverySystem.UIClasses
             border.Background = color;
         }
 
-        public static void BrushYellow<T>(bool isEnter, T border) where T : Border
+        public static void BrushColor<T>(bool isEnter, T border, SolidColorBrush colorEnter, SolidColorBrush colorLeave) where T : Border
         {
-            if(isEnter)
+            if (isEnter)
             {
-                Brush(YellowWhenMouseEnter, border);
+                Brush(colorEnter, border);
             }
             else
             {
-                Brush(YellowWhenMouseLeave, border);
+                Brush(colorLeave, border);
             }
+        }
+
+        public static void BrushYellow<T>(bool isEnter, T border) where T : Border
+        {
+            BrushColor(isEnter, border, YellowWhenMouseEnter, YellowWhenMouseLeave);
+        }
+
+        public static void BrushBlue<T>(bool isEnter, T border) where T : Border
+        {
+            BrushColor(isEnter, border, BlueWhenMouseEnter, BlueWhenMouseLeave);
         }
     }
 }
