@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DeliverySystem.UIClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,16 @@ namespace DeliverySystem.MainWindowPages
         public Couriers()
         {
             InitializeComponent();
+        }
+
+        private void Border_MouseEnter(object sender, MouseEventArgs e)
+        {
+            BrushWithMouse.BrushYellow(true, ((Border)sender));
+        }
+
+        private void Border_MouseLeave(object sender, MouseEventArgs e)
+        {
+            BrushWithMouse.BrushYellow(false, ((Border)sender));
         }
     }
 }

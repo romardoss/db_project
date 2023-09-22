@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DeliverySystem.UIClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,12 +28,12 @@ namespace DeliverySystem.MainWindowPages
 
         private void Border_MouseEnter(object sender, MouseEventArgs e)
         {
-            ((Border)sender).Background = new SolidColorBrush(Color.FromRgb(141, 99, 214));
+            BrushWithMouse.BrushYellow(true, (Border)sender);
         }
 
         private void Border_MouseLeave(object sender, MouseEventArgs e)
         {
-            ((Border)sender).Background = new SolidColorBrush(Color.FromRgb(207, 179, 255));
+            BrushWithMouse.BrushYellow(false, (Border)sender);
 
         }
     }

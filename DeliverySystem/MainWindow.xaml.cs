@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DeliverySystem.LoginAndSignup;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace DeliverySystem
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int DefaultButtonWidth;
 
         public MainWindow()
         {
@@ -52,8 +54,9 @@ namespace DeliverySystem
         {
             Button[] buttons = { HideMenuButton, OrdersButton, ClientsButton, CouriersButton, PartnersButton, StatisticsButton, SalaryButton, InfoButton, SettingsButton };
             TextBlock[] textBlocks = { HideTextBlock, OrderTextBlock, ClientsTextBlock, CouriersTextBlock, PartnersTextBlock, StatisticTextBlock, SalaryTextBlock, InfoTextBlock, SettingsTextBlock};
-            
-            LeftListTabs.BeginAnimation(WidthProperty, AnimateStackPanel(LeftListTabs, 60, 0.15));
+            DefaultButtonWidth = (int)HideMenuButton.Width;
+
+            LeftListTabs.BeginAnimation(WidthProperty, AnimateStackPanel(LeftListTabs, 55, 0.15));
 
             foreach (var block in textBlocks)
             {
@@ -74,10 +77,10 @@ namespace DeliverySystem
             }
             foreach (var button in buttons)
             {
-                button.Width = 250;
+                button.Width = DefaultButtonWidth;
             }
             
-            LeftListTabs.BeginAnimation(WidthProperty, AnimateStackPanel(LeftListTabs, 250, 0.15));
+            LeftListTabs.BeginAnimation(WidthProperty, AnimateStackPanel(LeftListTabs, DefaultButtonWidth, 0.15));
 
             HideMenuButton.Visibility = Visibility.Visible;
             OpenMenuButton.Visibility = Visibility.Collapsed;
@@ -93,6 +96,34 @@ namespace DeliverySystem
                 //FillBehavior = FillBehavior.Stop
             };
             return animation;
+        }
+
+        private void StatisticsButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new MainWindowPages.Statistics();
+        }
+
+        private void SalaryButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new MainWindowPages.Salary();
+        }
+
+        private void InfoButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new MainWindowPages.AboutProgram();
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new MainWindowPages.Settings();
+            this.Hide();
+            Window window = new AccessingTheProgram();
+            window.ShowDialog();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }
