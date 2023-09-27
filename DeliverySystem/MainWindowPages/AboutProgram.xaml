@@ -9,6 +9,13 @@
       Title="AboutProgram">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36">In developing</TextBlock>
+        <StackPanel>
+            <TextBlock TextWrapping="Wrap" Margin="10">Автор: Берегун Роман <LineBreak/>Група: ТР-11
+                <LineBreak/>Телеграм: @romardoss
+        <LineBreak/>Дана програма реалізовує систему кур'єрської доставки та надає можливості різним 
+            користувачам взаємодіяти та отримувати необхідні та актуальні дані.
+        <LineBreak/>Якщо є будь-які питання, можна звернутися до розробника, натиснувши на кнопку:</TextBlock>
+            <Button x:Name="ContactWithDeveloperButton" Content="Зв'язатися з розробником" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Click="ContactWithDeveloperButton_Click"/>
+        </StackPanel>
     </Grid>
 </Page>

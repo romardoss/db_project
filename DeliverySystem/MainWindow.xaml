@@ -90,6 +90,12 @@
                         <TextBlock x:Name="InfoTextBlock">Про програму</TextBlock>
                     </DockPanel>
                 </Button>
+                <Button x:Name="ProfileButton" Click="ProfileButton_Click" >
+                    <DockPanel>
+                        <Image Source="/Icons/account_circle.png" />
+                        <TextBlock x:Name="ProfileTextBlock">Профіль</TextBlock>
+                    </DockPanel>
+                </Button>
                 <Button x:Name="SettingsButton" Click="SettingsButton_Click" >
                     <DockPanel>
                         <Image Source="/Icons/settings.png" />

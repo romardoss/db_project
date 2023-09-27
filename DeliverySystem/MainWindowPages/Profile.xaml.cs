@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace DeliverySystem.MainWindowPages
 {
     /// <summary>
-    /// Interaction logic for AboutProgram.xaml
+    /// Interaction logic for Profile.xaml
     /// </summary>
-    public partial class AboutProgram : Page
+    public partial class Profile : Page
     {
-        public AboutProgram()
+        public Profile()
         {
             InitializeComponent();
-        }
-
-        private void ContactWithDeveloperButton_Click(object sender, RoutedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://t.me/romardoss");
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using DeliverySystem.LoginAndSignup;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +30,18 @@ namespace DeliverySystem
         public MainWindow()
         {
             InitializeComponent();
+
+            string connectionString = "SERVER=localhost;DATABASE=delivery_system;UID=root;PASSWORD=;";
+
+            MySqlConnection connection= new MySqlConnection(connectionString);
+
+            connection.Open();
+            MySqlCommand mySqlCommand = new MySqlCommand("select * from couriers", connection);
+
+            DataTable dt = new DataTable();
+            dt.Load(mySqlCommand.ExecuteReader());
+
+
         }
 
         private void OrdersButton_Click(object sender, RoutedEventArgs e)
@@ -52,8 +66,8 @@ namespace DeliverySystem
 
         private void HideMenuButton_Click(object sender, RoutedEventArgs e)
         {
-            Button[] buttons = { HideMenuButton, OrdersButton, ClientsButton, CouriersButton, PartnersButton, StatisticsButton, SalaryButton, InfoButton, SettingsButton };
-            TextBlock[] textBlocks = { HideTextBlock, OrderTextBlock, ClientsTextBlock, CouriersTextBlock, PartnersTextBlock, StatisticTextBlock, SalaryTextBlock, InfoTextBlock, SettingsTextBlock};
+            Button[] buttons = { HideMenuButton, OrdersButton, ClientsButton, CouriersButton, PartnersButton, StatisticsButton, SalaryButton, InfoButton, ProfileButton, SettingsButton };
+            TextBlock[] textBlocks = { HideTextBlock, OrderTextBlock, ClientsTextBlock, CouriersTextBlock, PartnersTextBlock, StatisticTextBlock, SalaryTextBlock, InfoTextBlock, ProfileTextBlock, SettingsTextBlock};
             DefaultButtonWidth = (int)HideMenuButton.Width;
 
             LeftListTabs.BeginAnimation(WidthProperty, AnimateStackPanel(LeftListTabs, 55, 0.15));
@@ -69,8 +83,8 @@ namespace DeliverySystem
 
         private void OpenMenuButton_Click(object sender, RoutedEventArgs e)
         {
-            Button[] buttons = { HideMenuButton, OrdersButton, ClientsButton, CouriersButton, PartnersButton, StatisticsButton, SalaryButton, InfoButton, SettingsButton };
-            TextBlock[] textBlocks = { HideTextBlock, OrderTextBlock, ClientsTextBlock, CouriersTextBlock, PartnersTextBlock, StatisticTextBlock, SalaryTextBlock, InfoTextBlock, SettingsTextBlock };
+            Button[] buttons = { HideMenuButton, OrdersButton, ClientsButton, CouriersButton, PartnersButton, StatisticsButton, SalaryButton, InfoButton, ProfileButton, SettingsButton };
+            TextBlock[] textBlocks = { HideTextBlock, OrderTextBlock, ClientsTextBlock, CouriersTextBlock, PartnersTextBlock, StatisticTextBlock, SalaryTextBlock, InfoTextBlock, ProfileTextBlock, SettingsTextBlock };
             foreach (var block in textBlocks)
             {
                 block.Visibility = Visibility.Visible;
@@ -111,6 +125,11 @@ namespace DeliverySystem
         private void InfoButton_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Content = new MainWindowPages.AboutProgram();
+        }
+
+        private void ProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new MainWindowPages.Profile();
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
